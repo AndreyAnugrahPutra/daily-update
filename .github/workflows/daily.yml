@@ -17,6 +17,8 @@ jobs:
           echo "Last update: $(date -u)" > update.md
 
       - name: Commit dan Push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@users.noreply.github.com'
